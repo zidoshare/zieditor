@@ -262,6 +262,7 @@ if ( isDev ) {
     clientLogLevel: 'none', //日志
     compress: true, //压缩
     port:3000,
+    open:true,
     stats: {
       colors: true
     }
