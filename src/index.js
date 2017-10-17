@@ -1,10 +1,12 @@
-import './index.css'
-import hljs from 'highlight.js'
-import 'highlight.js/styles/default.css'
-import marked from 'marked'
-hljs.initHighlightingOnLoad()
-console.log(marked('I am using __markdown__.'))
+// let nodes = document.querySelectorAll('.zieditor-markdown')
+import render from './core/editor'
+render()
 
 if(module.hot){
-  module.hot.accept()
+  module.hot.accept('./core/editor.js',function(){
+    var nodes = document.querySelector('.CodeMirror.cm-s-default.CodeMirror-wrap')
+    nodes.remove()
+    const render = require('./core/editor').default
+    render()
+  })
 }
