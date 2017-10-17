@@ -1,9 +1,5 @@
 {
-  "presets": ["env", "react"],
-  "plugins": ["transform-runtime","react-hot-loader/babel"],
-  "env": {
-    "production": {
-      "presets": ["react-optimize"]
-    }
-  }
+  "presets": ["env"],
+  "plugins": ["transform-runtime"],
+  "comments": false
 }
