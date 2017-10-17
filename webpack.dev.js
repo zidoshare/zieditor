@@ -13,6 +13,9 @@ const common = require('./webpack.common.js')
 const config = require('./config')
 const webpack = require('webpack')
 module.exports = merge(common,{
+  entry: [
+    path.join(config.srcPath, 'index.js'),
+  ],
   plugins : [
     new HtmlWebpackPlugin({
       template: config.indexHtml,

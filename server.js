@@ -13,8 +13,15 @@ var webpackConfig = require(process.env.WEBPACK_CONFIG ? process.env.WEBPACK_CON
 var compiler = webpack(webpackConfig)
 
 app.use(require('webpack-dev-middleware')(compiler, {
-  noInfo: true, //取消webpack编译输出，如果需要可以注释掉
-  publicPath: webpackConfig.output.publicPath
+  // noInfo: true, //取消webpack编译输出，如果需要可以注释掉
+  publicPath: webpackConfig.output.publicPath,
+  hot:true,
+  stats:{
+    colors:true,
+  },
+  // proxy: {
+  //   '/w/start/*': 'http://127.0.0.1:8000'  //设置代理
+  // },
 }))
 
 app.use(require('webpack-hot-middleware')(compiler, {

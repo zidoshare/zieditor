@@ -11,10 +11,6 @@
 const path = require('path')
 const config = require('./config')
 module.exports = {
-  entry: [
-    'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
-    path.join(config.srcPath, 'index.js'),
-  ],
   output: {
     filename: '[name].[hash].js',
     path: config.dist,
