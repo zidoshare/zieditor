@@ -1,4 +1,6 @@
-# zieditor
-使用react基于draftjs打造的markdown编辑器
+# zieditor-core
 
-开坑
+
+## 概览
+
+基于react的markdown编辑器。
