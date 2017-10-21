@@ -1,4 +1,26 @@
-.CodeMirror {border: 1px solid silver; border-width: 1px 2px; }
+.zieditor-container{
+  width:100%;
+}
+.zieditor-container>div{
+  height:200px;
+  overflow-y: auto;
+}
+.zieditor-container::after{
+  clear: both;
+  content: "";
+  display: block;
+}
+.zieditor-edit-area{
+  float: left;
+  width: 50%;
+}
+.zieditor-display-area{
+  float: left;
+  width: 50%;
+}
+.CodeMirror{
+  height:100%;
+}
 .cm-header { font-family: arial; }
 .cm-header-1 { font-size: 150%; }
 .cm-header-2 { font-size: 130%; }

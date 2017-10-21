@@ -1,0 +1,707 @@
+#right-panel {
+    background-color: #fff;
+}
+
+#right-panel .cover-top {
+    background: linear-gradient(to bottom, #fff 50%, transparent);
+}
+
+#cover-bottom #cover-bottom-background-right {
+    background: #fff;
+}
+
+@font-face {
+  font-family: octicons-link;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+#zieditor-markdown-preview {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #373737;
+  font-family: "Roboto", "Noto Sans", "Ubuntu", "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif, "Noto Sans CJK SC", "Source Han Sans SC", "Microsoft Yahei";
+  font-size: 14px;
+  word-wrap: break-word;
+  background-color: #fff;
+}
+
+#zieditor-markdown-preview a {
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+#zieditor-markdown-preview a:active,
+#zieditor-markdown-preview a:hover {
+  outline-width: 0;
+}
+
+#zieditor-markdown-preview strong {
+  font-weight: inherit;
+}
+
+#zieditor-markdown-preview strong {
+  font-weight: bolder;
+}
+
+#zieditor-markdown-preview h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+#zieditor-markdown-preview img {
+  border-style: none;
+}
+
+#zieditor-markdown-preview svg:not(:root) {
+  overflow: hidden;
+}
+
+#zieditor-markdown-preview code,
+#zieditor-markdown-preview kbd,
+#zieditor-markdown-preview pre {
+  font-family: "Roboto Mono", "Ubuntu Mono", "Menlo", "Consolas", monospace;
+  font-size: 1em;
+}
+
+#zieditor-markdown-preview hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+#zieditor-markdown-preview input {
+  font: inherit;
+  margin: 0;
+}
+
+#zieditor-markdown-preview input {
+  overflow: visible;
+}
+
+#zieditor-markdown-preview button:-moz-focusring,
+#zieditor-markdown-preview [type="button"]:-moz-focusring,
+#zieditor-markdown-preview [type="reset"]:-moz-focusring,
+#zieditor-markdown-preview [type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+#zieditor-markdown-preview [type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+#zieditor-markdown-preview table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+#zieditor-markdown-preview td,
+#zieditor-markdown-preview th {
+  padding: 0;
+}
+
+#zieditor-markdown-preview * {
+  box-sizing: border-box;
+}
+
+#zieditor-markdown-preview input {
+  font: 13px/1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+#zieditor-markdown-preview a {
+  color: #4078c0;
+  text-decoration: none;
+}
+
+#zieditor-markdown-preview a:hover,
+#zieditor-markdown-preview a:active {
+  text-decoration: underline;
+}
+
+#zieditor-markdown-preview hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+#zieditor-markdown-preview hr::before {
+  display: table;
+  content: "";
+}
+
+#zieditor-markdown-preview hr::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+#zieditor-markdown-preview h1,
+#zieditor-markdown-preview h2,
+#zieditor-markdown-preview h3,
+#zieditor-markdown-preview h4,
+#zieditor-markdown-preview h5,
+#zieditor-markdown-preview h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+#zieditor-markdown-preview h1 {
+  font-size: 30px;
+}
+
+#zieditor-markdown-preview h2 {
+  font-size: 21px;
+}
+
+#zieditor-markdown-preview h3 {
+  font-size: 16px;
+}
+
+#zieditor-markdown-preview h4 {
+  font-size: 14px;
+}
+
+#zieditor-markdown-preview h5 {
+  font-size: 12px;
+}
+
+#zieditor-markdown-preview h6 {
+  font-size: 11px;
+}
+
+#zieditor-markdown-preview p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+#zieditor-markdown-preview blockquote {
+  margin: 0;
+}
+
+#zieditor-markdown-preview ul,
+#zieditor-markdown-preview ol {
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#zieditor-markdown-preview ol ol,
+#zieditor-markdown-preview ul ol {
+  list-style-type: lower-roman;
+}
+
+#zieditor-markdown-preview ul ul ol,
+#zieditor-markdown-preview ul ol ol,
+#zieditor-markdown-preview ol ul ol,
+#zieditor-markdown-preview ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+#zieditor-markdown-preview dd {
+  margin-left: 0;
+}
+
+#zieditor-markdown-preview code {
+  font-family: "Roboto Mono", "Ubuntu Mono", "Menlo", "Consolas", monospace;
+  font-size: 12px;
+}
+
+#zieditor-markdown-preview pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: 12px "Roboto Mono", "Ubuntu Mono", "Menlo", "Consolas", monospace;
+}
+
+#zieditor-markdown-preview .pl-0 {
+  padding-left: 0 !important;
+}
+
+#zieditor-markdown-preview .pl-1 {
+  padding-left: 3px !important;
+}
+
+#zieditor-markdown-preview .pl-2 {
+  padding-left: 6px !important;
+}
+
+#zieditor-markdown-preview .pl-3 {
+  padding-left: 12px !important;
+}
+
+#zieditor-markdown-preview .pl-4 {
+  padding-left: 24px !important;
+}
+
+#zieditor-markdown-preview .pl-5 {
+  padding-left: 36px !important;
+}
+
+#zieditor-markdown-preview .pl-6 {
+  padding-left: 48px !important;
+}
+
+#zieditor-markdown-preview .form-select::-ms-expand {
+  opacity: 0;
+}
+
+#zieditor-markdown-preview:before {
+  display: table;
+  content: "";
+}
+
+#zieditor-markdown-preview:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+#zieditor-markdown-preview>*:first-child {
+  margin-top: 0 !important;
+}
+
+#zieditor-markdown-preview>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+#zieditor-markdown-preview a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+#zieditor-markdown-preview .anchor {
+  display: inline-block;
+  padding-right: 2px;
+  margin-left: -18px;
+}
+
+#zieditor-markdown-preview .anchor:focus {
+  outline: none;
+}
+
+#zieditor-markdown-preview h1,
+#zieditor-markdown-preview h2,
+#zieditor-markdown-preview h3,
+#zieditor-markdown-preview h4,
+#zieditor-markdown-preview h5,
+#zieditor-markdown-preview h6 {
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+#zieditor-markdown-preview h1 .octicon-link,
+#zieditor-markdown-preview h2 .octicon-link,
+#zieditor-markdown-preview h3 .octicon-link,
+#zieditor-markdown-preview h4 .octicon-link,
+#zieditor-markdown-preview h5 .octicon-link,
+#zieditor-markdown-preview h6 .octicon-link {
+  color: #000;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+#zieditor-markdown-preview h1:hover .anchor,
+#zieditor-markdown-preview h2:hover .anchor,
+#zieditor-markdown-preview h3:hover .anchor,
+#zieditor-markdown-preview h4:hover .anchor,
+#zieditor-markdown-preview h5:hover .anchor,
+#zieditor-markdown-preview h6:hover .anchor {
+  text-decoration: none;
+}
+
+#zieditor-markdown-preview h1:hover .anchor .octicon-link,
+#zieditor-markdown-preview h2:hover .anchor .octicon-link,
+#zieditor-markdown-preview h3:hover .anchor .octicon-link,
+#zieditor-markdown-preview h4:hover .anchor .octicon-link,
+#zieditor-markdown-preview h5:hover .anchor .octicon-link,
+#zieditor-markdown-preview h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+#zieditor-markdown-preview h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+#zieditor-markdown-preview h1 .anchor {
+  line-height: 1;
+}
+
+#zieditor-markdown-preview h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+#zieditor-markdown-preview h2 .anchor {
+  line-height: 1;
+}
+
+#zieditor-markdown-preview h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+#zieditor-markdown-preview h3 .anchor {
+  line-height: 1.2;
+}
+
+#zieditor-markdown-preview h4 {
+  font-size: 1.25em;
+}
+
+#zieditor-markdown-preview h4 .anchor {
+  line-height: 1.2;
+}
+
+#zieditor-markdown-preview h5 {
+  font-size: 1em;
+}
+
+#zieditor-markdown-preview h5 .anchor {
+  line-height: 1.1;
+}
+
+#zieditor-markdown-preview h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+#zieditor-markdown-preview h6 .anchor {
+  line-height: 1.1;
+}
+
+#zieditor-markdown-preview p,
+#zieditor-markdown-preview blockquote,
+#zieditor-markdown-preview ul,
+#zieditor-markdown-preview ol,
+#zieditor-markdown-preview dl,
+#zieditor-markdown-preview table,
+#zieditor-markdown-preview pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+#zieditor-markdown-preview hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+#zieditor-markdown-preview ul,
+#zieditor-markdown-preview ol {
+  padding-left: 2em;
+}
+
+#zieditor-markdown-preview ul ul,
+#zieditor-markdown-preview ul ol,
+#zieditor-markdown-preview ol ol,
+#zieditor-markdown-preview ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+#zieditor-markdown-preview li>p {
+  margin-top: 16px;
+}
+
+#zieditor-markdown-preview dl {
+  padding: 0;
+}
+
+#zieditor-markdown-preview dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+#zieditor-markdown-preview dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+#zieditor-markdown-preview blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+#zieditor-markdown-preview blockquote>:first-child {
+  margin-top: 0;
+}
+
+#zieditor-markdown-preview blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+#zieditor-markdown-preview table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+#zieditor-markdown-preview table th {
+  font-weight: bold;
+}
+
+#zieditor-markdown-preview table th,
+#zieditor-markdown-preview table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+#zieditor-markdown-preview table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+#zieditor-markdown-preview table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+#zieditor-markdown-preview img {
+  max-width: 100%;
+  box-sizing: content-box;
+  background-color: #fff;
+}
+
+#zieditor-markdown-preview code {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+#zieditor-markdown-preview code:before,
+#zieditor-markdown-preview code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+#zieditor-markdown-preview pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+#zieditor-markdown-preview .highlight {
+  margin-bottom: 16px;
+}
+
+#zieditor-markdown-preview .highlight pre,
+#zieditor-markdown-preview pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+#zieditor-markdown-preview .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+#zieditor-markdown-preview pre {
+  word-wrap: normal;
+}
+
+#zieditor-markdown-preview pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+#zieditor-markdown-preview pre code:before,
+#zieditor-markdown-preview pre code:after {
+  content: normal;
+}
+
+#zieditor-markdown-preview kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+
+#zieditor-markdown-preview .pl-c {
+  color: #969896;
+}
+
+#zieditor-markdown-preview .pl-c1,
+#zieditor-markdown-preview .pl-s .pl-v {
+  color: #0086b3;
+}
+
+#zieditor-markdown-preview .pl-e,
+#zieditor-markdown-preview .pl-en {
+  color: #795da3;
+}
+
+#zieditor-markdown-preview .pl-s .pl-s1,
+#zieditor-markdown-preview .pl-smi {
+  color: #333;
+}
+
+#zieditor-markdown-preview .pl-ent {
+  color: #63a35c;
+}
+
+#zieditor-markdown-preview .pl-k {
+  color: #a71d5d;
+}
+
+#zieditor-markdown-preview .pl-pds,
+#zieditor-markdown-preview .pl-s,
+#zieditor-markdown-preview .pl-s .pl-pse .pl-s1,
+#zieditor-markdown-preview .pl-sr,
+#zieditor-markdown-preview .pl-sr .pl-cce,
+#zieditor-markdown-preview .pl-sr .pl-sra,
+#zieditor-markdown-preview .pl-sr .pl-sre {
+  color: #183691;
+}
+
+#zieditor-markdown-preview .pl-v {
+  color: #ed6a43;
+}
+
+#zieditor-markdown-preview .pl-id {
+  color: #b52a1d;
+}
+
+#zieditor-markdown-preview .pl-ii {
+  background-color: #b52a1d;
+  color: #f8f8f8;
+}
+
+#zieditor-markdown-preview .pl-sr .pl-cce {
+  color: #63a35c;
+  font-weight: bold;
+}
+
+#zieditor-markdown-preview .pl-ml {
+  color: #693a17;
+}
+
+#zieditor-markdown-preview .pl-mh,
+#zieditor-markdown-preview .pl-mh .pl-en,
+#zieditor-markdown-preview .pl-ms {
+  color: #1d3e81;
+  font-weight: bold;
+}
+
+#zieditor-markdown-preview .pl-mq {
+  color: #008080;
+}
+
+#zieditor-markdown-preview .pl-mi {
+  color: #333;
+  font-style: italic;
+}
+
+#zieditor-markdown-preview .pl-mb {
+  color: #333;
+  font-weight: bold;
+}
+
+#zieditor-markdown-preview .pl-md {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+#zieditor-markdown-preview .pl-mi1 {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+#zieditor-markdown-preview .pl-mdr {
+  color: #795da3;
+  font-weight: bold;
+}
+
+#zieditor-markdown-preview .pl-mo {
+  color: #1d3e81;
+}
+
+#zieditor-markdown-preview kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px "Roboto Mono", "Ubuntu Mono", "Menlo", "Consolas", monospace;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+
+#zieditor-markdown-preview .full-commit .btn-outline:not(:disabled):hover {
+  color: #4078c0;
+  border: 1px solid #4078c0;
+}
+
+#zieditor-markdown-preview :checked+.radio-label {
+  position: relative;
+  z-index: 1;
+  border-color: #4078c0;
+}
+
+#zieditor-markdown-preview .octicon {
+  display: inline-block;
+  vertical-align: text-top;
+  fill: currentColor;
+}
+
+#zieditor-markdown-preview .task-list-item {
+  list-style-type: none;
+}
+
+#zieditor-markdown-preview .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+#zieditor-markdown-preview .task-list-item input {
+  margin: 0 0.2em 0.25em -1.6em;
+  vertical-align: middle;
+}
+
+#zieditor-markdown-preview hr {
+  border-bottom-color: #eee;
+}

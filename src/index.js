@@ -1,6 +1,6 @@
 // let nodes = document.querySelectorAll('.zieditor-markdown')
 import render from './core/editor'
-render()
+render(document.getElementById('zieditor-markdown'),document.getElementById('zieditor-markdown-preview'))
 
 if(module.hot){
   module.hot.accept('./core/editor.js',function(){
