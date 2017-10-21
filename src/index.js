@@ -7,6 +7,6 @@ if(module.hot){
     var nodes = document.querySelector('.CodeMirror.cm-s-default.CodeMirror-wrap')
     nodes.remove()
     const render = require('./core/editor').default
-    render()
+    render(document.getElementById('zieditor-markdown'),document.getElementById('zieditor-markdown-preview'))
   })
 }

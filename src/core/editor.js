@@ -7,6 +7,7 @@ import 'codemirror/addon/selection/active-line'
 import util from './util'
 import themes from '../themes'
 import '../styles/style.css'
+import highlight from 'highlight.js'
 import 'highlight.js/styles/solarized-light.css'
 themes.map(theme => {
   if(theme !== 'default')
@@ -22,6 +23,10 @@ marked.setOptions({
   sanitize:true,
   smartLists:true,
   smartypants:false,
+  highlight: function(code) {
+    console.log(arguments)
+    return highlight.highlightAuto(code).value
+  }
 })
 
 const render = (editNode,previewNode) => {
@@ -34,8 +39,9 @@ const render = (editNode,previewNode) => {
   const parse = function(value){
     return marked(value)
   }
+  console.log('ok')
   const btn = document.createElement('button')
-  btn.innerHTML = '下一个皮肤'
+  btn.innerHTML = '下一个皮肤' 
   document.body.appendChild(btn)
   let editor = CodeMirror.fromTextArea(editNode,{
     mode:'markdown',
