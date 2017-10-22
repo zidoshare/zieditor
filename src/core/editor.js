@@ -2,17 +2,21 @@ import CodeMirror from 'codemirror'
 import marked from 'marked'
 import 'codemirror/lib/codemirror.css'
 import './index.css'
-import 'codemirror/mode/markdown/markdown'
-import 'codemirror/addon/selection/active-line'
 import util from './util'
-import themes from '../themes'
 import '../styles/style.css'
 import highlight from 'highlight.js'
 import 'highlight.js/styles/solarized-light.css'
-themes.map(theme => {
-  if(theme !== 'default')
-    require(`codemirror/theme/${theme}.css`)
-})
+
+function importAll(r) {
+  r.keys().forEach(r)
+  return r.keys()
+}
+function resolveModes(){
+  return importAll(require.context('codemirror/mode/', true, /\.js$/))
+}
+function resolveThemes(){
+  return importAll(require.context('codemirror/theme/',true,/\.css$/))
+}
 
 marked.setOptions({
   renderer:new marked.Renderer(),
@@ -24,7 +28,6 @@ marked.setOptions({
   smartLists:true,
   smartypants:false,
   highlight: function(code) {
-    console.log(arguments)
     return highlight.highlightAuto(code).value
   }
 })
@@ -39,22 +42,37 @@ const render = (editNode,previewNode) => {
   const parse = function(value){
     return marked(value)
   }
-  console.log('ok')
-  const btn = document.createElement('button')
-  btn.innerHTML = '下一个皮肤' 
-  document.body.appendChild(btn)
+
+  const themeSelection = document.createElement('select')
+  let themes = resolveThemes()
+  
+  themes = themes.map(theme => {
+    return theme.slice(2,theme.length - 4)
+  })
+  themes = ['default'].concat(themes)
+  
+  themes.forEach(key => {
+    const option = document.createElement('option')
+    option.innerHTML = key
+    themeSelection.append(option)
+  })
+  document.body.appendChild(themeSelection)
+  
+  resolveModes()
   let editor = CodeMirror.fromTextArea(editNode,{
-    mode:'markdown',
+    mode:{name: 'gfm',
+      tokenTypeOverrides: {
+        emoji: 'emoji',
+      }},
     autofocus: true,
-    lineWrapping: true, 
-    foldGutter: true,
+    lineWrapping: false, 
     styleActiveLine: true,
     lineNumbers: false,
+    smartIndent:false,
+    theme:'default'
   })
-  btn.addEventListener('click',function(){
-    var theme = 'abcdef'
-    editor.setOption('theme', theme)
-    location.hash = '' + theme
+  themeSelection.addEventListener('change',function(e){
+    editor.setOption('theme',e.target.value)
   })
   editor.on('change',util.throttle(function(){
     putHtml(parse(editor.getValue()))
