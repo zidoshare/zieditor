@@ -1,10 +1,9 @@
 import CodeMirror from 'codemirror'
-import marked from 'marked'
+import initMarked from './initMarked'
 import 'codemirror/lib/codemirror.css'
 import './index.css'
 import util from './util'
 import '../styles/style.css'
-import highlight from 'highlight.js'
 import 'highlight.js/styles/solarized-light.css'
 
 function importAll(r) {
@@ -18,19 +17,7 @@ function resolveThemes(){
   return importAll(require.context('codemirror/theme/',true,/\.css$/))
 }
 
-marked.setOptions({
-  renderer:new marked.Renderer(),
-  gfm:true,
-  tabled:true,
-  breaks:false,
-  pedantic:false,
-  sanitize:true,
-  smartLists:true,
-  smartypants:false,
-  highlight: function(code) {
-    return highlight.highlightAuto(code).value
-  }
-})
+const marked = initMarked()
 
 const render = (editNode,previewNode) => {
   const putHtml = (content) => {

@@ -1,5 +1,5 @@
 const util = {}
-util.now = Date.now || function() {
+util.now = Date.now || function () {
   return new Date().getTime()
 }
 
@@ -7,8 +7,8 @@ util.now = Date.now || function() {
 util.debounce = (func, wait, immediate) => {
   // immediate默认为false
   var timeout, args, context, timestamp, result
-  
-  var later = function() {
+
+  var later = function () {
     // 当wait指定的时间间隔期间多次调用_.debounce返回的函数，则会不断更新timestamp的值，导致last < wait && last >= 0一直为true，从而不断启动新的计时器延时执行func
     var last = util.now() - timestamp
 
@@ -23,7 +23,7 @@ util.debounce = (func, wait, immediate) => {
     }
   }
 
-  return function() {
+  return function () {
     context = this
     args = arguments
     timestamp = util.now()
@@ -41,7 +41,7 @@ util.debounce = (func, wait, immediate) => {
 }
 
 //函数节流（间隔一定时间触发回调来控制函数调用频率）
-util.throttle = function(func, wait, options) {
+util.throttle = function (func, wait, options) {
   /* options的默认值
    *  表示首次调用返回值方法时，会马上调用func；否则仅会记录当前时刻，当第二次调用的时间间隔超过wait时，才调用func。
    *  options.leading = true
@@ -53,13 +53,13 @@ util.throttle = function(func, wait, options) {
   var timeout = null
   var previous = 0
   if (!options) options = {}
-  var later = function() {
+  var later = function () {
     previous = options.leading === false ? 0 : util.now()
     timeout = null
     result = func.apply(context, args)
     if (!timeout) context = args = null
   }
-  return function() {
+  return function () {
     var now = util.now()
     if (!previous && options.leading === false) previous = now
     // 计算剩余时间
@@ -84,6 +84,19 @@ util.throttle = function(func, wait, options) {
     return result
   }
 }
+util.merge = (obj) => {
+  var i = 1, target, key
 
+  for (; i < arguments.length; i++) {
+    target = arguments[i]
+    for (key in target) {
+      if (Object.prototype.hasOwnProperty.call(target, key)) {
+        obj[key] = target[key]
+      }
+    }
+  }
+
+  return obj
+}
 
 export default util
