@@ -275,7 +275,7 @@
 #zieditor-markdown-preview .anchor {
   display: inline-block;
   padding-right: 2px;
-  margin-left: -18px;
+  /* margin-left: -18px; */
 }
 
 #zieditor-markdown-preview .anchor:focus {

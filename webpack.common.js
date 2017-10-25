@@ -19,21 +19,7 @@ module.exports = {
   context: path.resolve(__dirname, 'src'),
   module: {
     //webpack1.0中可以省略 '-loader'，但是官方说法为了有明确的区分，在webpack2.0中，不能再省略
-    rules: [
-      {
-        test: /\.(js|jsx)$/,
-        enforce: 'pre',
-        loader: 'eslint-loader',
-        exclude: /node_modules/,
-        options: {
-          emitWarning: true,
-          emitError: true,
-          //failOnWarning: false, failOnError: true,
-          useEslintrc: false,
-          // configFile: path.join(__dirname, "eslint_conf.js")
-          configFile: path.join(__dirname, '.eslintrc.json')
-        }
-      }, {
+    rules: [{
         test: /\.(js)$/,
         loader: 'babel-loader',
         include: [
