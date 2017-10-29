@@ -161,6 +161,7 @@
         // heading
         if (cap = this.rules.heading.exec(src)) {
           src = src.substring(cap[0].length);
+          console.log(cap)
           this.tokens.push({
             type: 'heading',
             depth: cap[1].length,
@@ -817,7 +818,6 @@
       //预生成好目录标签
       src.forEach(function (token) {
         if (token.type == 'heading') {
-          console.log(token);
           let id = token.text.toLowerCase();
           tocItems += me.renderer.tocItem(id, token.depth, token.text);
         }
@@ -1036,6 +1036,7 @@
         var out;
 
         try {
+          debugger
           out = Parser.parse(tokens, opt);
         } catch (e) {
           err = e;
