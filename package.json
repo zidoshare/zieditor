@@ -3,12 +3,6 @@
   "version": "1.0.0",
   "description": "markdown 编辑器",
   "main": "src/index.js",
-  "scripts": {
-    "start": "node ./server.js",
-    "build": "webpack --progress --colors --config ./webpack.prod.js",
-    "clean": "rimraf dist/*",
-    "test": "mocha-webpack --webpack-config webpack.dev.js \"src/**/*.test.js\""
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zidoshare/zieditor-core.git"
@@ -21,34 +15,5 @@
   "bugs": {
     "url": "https://github.com/zidoshare/zieditor-core/issues"
   },
-  "homepage": "https://github.com/zidoshare/zieditor-core#readme",
-  "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-plugin-import": "^1.6.2",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.6.0",
-    "chai": "^4.1.2",
-    "clean-webpack-plugin": "^0.1.17",
-    "cross-env": "^5.0.5",
-    "css-loader": "^0.28.7",
-    "express": "^4.16.2",
-    "file-loader": "^1.1.5",
-    "html-webpack-plugin": "^2.30.1",
-    "json-loader": "^0.5.7",
-    "mocha": "^3.0.0",
-    "mocha-webpack": "^1.0.0-rc.1",
-    "morgan": "^1.9.0",
-    "style-loader": "^0.19.0",
-    "uglifyjs-webpack-plugin": "^1.0.0-beta.3",
-    "webpack": "^3.7.1",
-    "webpack-dev-server": "^2.9.2",
-    "webpack-hot-middleware": "^2.20.0",
-    "webpack-merge": "^4.1.0"
-  },
-  "dependencies": {
-    "codemirror": "^5.30.0",
-    "highlight.js": "^9.12.0",
-    "katex": "^0.9.0-alpha1"
-  }
+  "homepage": "https://github.com/zidoshare/zieditor-core#readme"
 }
