@@ -1012,6 +1012,7 @@
       }
     });
     this.inline = new InlineLexer(src.links, this.options);
+    this.inline.tocHTML = me.renderer.toc(tocItems)
     // use an InlineLexer with a TextRenderer to extract pure text
     this.inlineText = new InlineLexer(src.links, merge({}, this.options, { renderer: new TextRenderer }));
     this.tokens = src.reverse();

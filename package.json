@@ -7,6 +7,10 @@
     "type": "git",
     "url": "git+https://github.com/zidoshare/zieditor-core.git"
   },
+  "scripts": {
+    "start": "webpack-dev-server --progress --colors --config ./webpack.dev.conf.js",
+    "build": "webpack --progress --colors --config ./webpack.prod.conf.js"
+  },
   "keywords": [
     "markdown"
   ],
@@ -15,5 +19,13 @@
   "bugs": {
     "url": "https://github.com/zidoshare/zieditor-core/issues"
   },
-  "homepage": "https://github.com/zidoshare/zieditor-core#readme"
+  "homepage": "https://github.com/zidoshare/zieditor-core#readme",
+  "devDependencies": {
+    "clean-webpack-plugin": "^0.1.18",
+    "html-webpack-plugin": "^2.30.1",
+    "uglifyjs-webpack-plugin": "^1.1.8",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1",
+    "webpack-merge": "^4.1.1"
+  }
 }
