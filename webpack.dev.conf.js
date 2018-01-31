@@ -15,11 +15,19 @@ module.exports = merge(common,{
     contentBase:'./dist',
     port:9000,
     hot:true,
+    open:true,
+  },
+  module:{
+    rules:[{
+      test:/.css$/,
+      use:['style-loader','css-loader']
+    }]
   },
   plugins:[
     new HtmlWebpackPlugin({
       title: 'zieditor test',
-      template:path.resolve(__dirname,'test','templates','index.html')
+      template:path.resolve(__dirname,'test','templates','index.html'),
+      favicon:path.resolve(__dirname,'test','templates','z.png')
     }),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
