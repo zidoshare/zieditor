@@ -165,7 +165,6 @@
       , i
       , tag
       , l;
-
     while (src) {
       // newline
       if (cap = this.rules.newline.exec(src)) {
@@ -176,7 +175,6 @@
           });
         }
       }
-
       // code
       if (cap = this.rules.code.exec(src)) {
         src = src.substring(cap[0].length);

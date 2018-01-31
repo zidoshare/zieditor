@@ -17,11 +17,11 @@ zieditor.prototype.options = {
   renderer: new marked.Renderer(),
   gfm: true,
   tables: true,
-  breaks: false,
-  pedantic: false,
+  breaks: true,
+  pedantic: true,
   sanitize: true,
   smartLists: true,
-  smartypants: false
+  smartypants: true,
 }
 
 zieditor.prototype.create = function () {
@@ -37,9 +37,12 @@ zieditor.prototype.create = function () {
     scrollbarStyle: null,
   })
   this.marked.setOptions(this.options)
-  this.editor.on('change', this.preview.bind(this))
+  this.editor.on('change', util.throttle(this.preview.bind(this), 50))
   var scroll = util.throttle(function (cm) {
-    this.previewNode.scrollTop = cm.getScrollInfo().top
+    var top = cm.getScrollInfo().top
+    var line = cm.lineAtHeight(top, 'local')
+    // console.log(line,top,cm.heightAtLine(line,'local'),cm.heightAtLine(line + 1,'local'))
+    this.previewNode.scrollTop = top
   }, 0)
   this.editor.on('scroll', scroll.bind(this))
   util.addHandler(this.previewNode, 'mousewheel', util.throttle(function (e) {
@@ -60,10 +63,15 @@ zieditor.prototype.reCreate = function () {
 }
 
 zieditor.prototype.parse = function () {
+  console.log('parse')
   return this.marked(this.editor.getValue())
 }
 
 zieditor.prototype.preview = function () {
   this.previewNode.innerHTML = this.parse()
+}
+
+zieditor.prototype.keyMap = function (k) {
+  this.editor.setOption('keyMap', k)
 }
 export default zieditor
