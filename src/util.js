@@ -107,6 +107,27 @@ const util = {
       }
       return result
     }
+  },
+  scroll: function (dom, top, duration) {
+    if (window.requestAnimationFrame) {
+      var cosParameter = top - dom.scrollTop,
+        scrollCount = 0,
+        oldTimestamp = this.now()
+      function step(newTimestamp) {
+        scrollCount += Math.PI / (duration / (newTimestamp - oldTimestamp))
+        if (scrollCount >= Math.PI) {
+          dom.scrollTop = top
+        }
+        console.log(dom.scrollTop, top)
+        if (dom.scrollTop >= top) return
+        dom.scrollTop = Math.round(cosParameter + cosParameter * Math.cos(scrollCount))
+        oldTimestamp = newTimestamp
+        window.requestAnimationFrame(step)
+      }
+      window.requestAnimationFrame(step)
+    } else {
+      dom.scrollTop = top
+    }
   }
 }
 export default util
