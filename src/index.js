@@ -1,9 +1,5 @@
-import CodeMirror from './lib/codemirror/lib/codemirror'
-require('./lib/codemirror/addon/edit/continuelist')
-require('./lib/codemirror/addon/mode/overlay')
+import CodeEditor from './lib/codeEditor'
 import marked from './lib/marked/marked.js'
-require('./lib/codemirror/mode/markdown/markdown')
-require('./lib/codemirror/mode/gfm/gfm')
 import util from './util.js'
 
 function zieditor(node, previewNode, opt) {
@@ -25,7 +21,7 @@ zieditor.prototype.options = {
 }
 
 zieditor.prototype.create = function () {
-  this.editor = CodeMirror.fromTextArea(this.node, {
+  this.editor = CodeEditor.fromTextArea(this.node, {
     mode: {
       name: 'gfm',
       tokenTypeOverrides: {
@@ -36,6 +32,7 @@ zieditor.prototype.create = function () {
     theme: 'default',
     scrollbarStyle: null,
   })
+  console.log(this.editor)
   this.marked.setOptions(this.options)
   this.editor.on('change', util.throttle(this.preview.bind(this), 50))
   var scroll = util.throttle(function (cm) {
@@ -63,7 +60,6 @@ zieditor.prototype.reCreate = function () {
 }
 
 zieditor.prototype.parse = function () {
-  console.log('parse')
   return this.marked(this.editor.getValue())
 }
 

@@ -1,4 +1,11 @@
 const util = {
+  clientSize:function(node){
+    node = node || document.body
+    return {
+      w:node.clientWidth,
+      h:node.clientHeight,
+    }
+  },
   now: Date.now || function () {
     return new Date().getTime()
   },
