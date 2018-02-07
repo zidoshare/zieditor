@@ -39,17 +39,9 @@ zieditor.prototype.create = function () {
     var top = cm.getScrollInfo().top
     var line = cm.lineAtHeight(top, 'local')
     // console.log(line,top,cm.heightAtLine(line,'local'),cm.heightAtLine(line + 1,'local'))
-    this.previewNode.scrollTop = top
+    util.scroll(this.previewNode,top,200)
   }, 0)
   this.editor.on('scroll', scroll.bind(this))
-  util.addHandler(this.previewNode, 'mousewheel', util.throttle(function (e) {
-    //计算鼠标滚轮滚动的距离
-    var v = e.wheelDelta / 2
-    this.editor.scrollTo(0, this.previewNode.scrollTop - v)
-    this.previewNode.scrollTop -= v
-    //阻止浏览器默认方法
-    e.preventDefault();
-  }.bind(this), 0))
 }
 zieditor.prototype.destroyed = function () {
   this.editor.toTextArea()
