@@ -32,14 +32,12 @@ zieditor.prototype.create = function () {
     theme: 'default',
     scrollbarStyle: null,
   })
-  console.log(this.editor)
   this.marked.setOptions(this.options)
   this.editor.on('change', util.throttle(this.preview.bind(this), 50))
   var scroll = util.throttle(function (cm) {
     var top = cm.getScrollInfo().top
     var line = cm.lineAtHeight(top, 'local')
-    // console.log(line,top,cm.heightAtLine(line,'local'),cm.heightAtLine(line + 1,'local'))
-    util.scroll(this.previewNode,top,200)
+    util.scroll(this.previewNode, top, 200)
   }, 0)
   this.editor.on('scroll', scroll.bind(this))
 }

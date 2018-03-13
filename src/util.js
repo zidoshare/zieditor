@@ -1,9 +1,9 @@
 const util = {
-  clientSize:function(node){
+  clientSize: function (node) {
     node = node || document.body
     return {
-      w:node.clientWidth,
-      h:node.clientHeight,
+      w: node.clientWidth,
+      h: node.clientHeight,
     }
   },
   now: Date.now || function () {
@@ -34,6 +34,9 @@ const util = {
   },
   getEvent: function (event) {
     return event ? event : window.event
+  },
+  getDOMFromEvent: function (event) {
+    return event.target
   },
   //函数去抖（对于连续的事件响应我们只执行一次回调）
   debounce: function (func, wait, immediate) {
@@ -135,6 +138,6 @@ const util = {
     } else {
       dom.scrollTop = top
     }
-  }
+  },
 }
 export default util

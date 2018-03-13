@@ -1,11 +1,43 @@
-.CodeMirror{
-  height:100%;
+.zieditor-edit-area {
+  font-size: 20px;
+  height: 100%;
+  width: 100%;
+  color: #373737;
+  font-family: "Roboto", "Noto Sans", "Ubuntu", "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif, "Noto Sans CJK SC", "Source Han Sans SC", "Microsoft Yahei";
 }
-.cm-header { font-family: arial; }
-.cm-header-1 { font-size: 150%; }
-.cm-header-2 { font-size: 130%; }
-.cm-header-3 { font-size: 120%; }
-.cm-header-4 { font-size: 110%; }
-.cm-header-5 { font-size: 100%; }
-.cm-header-6 { font-size: 90%; }
-.cm-strong { font-size: 140%; }
+
+.zieditor-heading {
+  font-weight: bold;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 16px;
+}
+
+.zieditor-heading-1 {
+  font-size: 1.5em;
+  padding-bottom: 0.3em;
+}
+
+.zieditor-heading-2 {
+  font-size: 1.3em;
+}
+
+.zieditor-heading-3 {
+  font-size: 1.2em;
+}
+
+.zieditor-heading-4 {
+  font-size: 1.1em;
+}
+
+.zieditor-heading-5 {
+  font-size: 1em;
+}
+
+.zieditor-heading-6 {
+  font-size: 0.9em;
+}
+
+.cm-strong {
+  font-size: 140%;
+}

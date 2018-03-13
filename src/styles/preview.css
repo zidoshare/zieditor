@@ -3,10 +3,10 @@
   -webkit-text-size-adjust: 100%;
   color: #373737;
   font-family: "Roboto", "Noto Sans", "Ubuntu", "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif, "Noto Sans CJK SC", "Source Han Sans SC", "Microsoft Yahei";
-  font-size: 14px;
+  font-size: 20px;
   word-wrap: break-word;
   background-color: #fff;
-  height:100%;
+  height: 100%;
   overflow-y: auto;
 }
 
@@ -26,11 +26,6 @@
 
 #zieditor-preview strong {
   font-weight: bolder;
-}
-
-#zieditor-preview h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
 }
 
 #zieditor-preview img {
@@ -130,32 +125,33 @@
 #zieditor-preview h5,
 #zieditor-preview h6 {
   margin-top: 0;
+  border-bottom: 1px solid #eee;
   margin-bottom: 0;
   line-height: 1.5;
 }
 
 #zieditor-preview h1 {
-  font-size: 30px;
+  font-size: 1.5em;
 }
 
 #zieditor-preview h2 {
-  font-size: 21px;
+  font-size: 1.4em;
 }
 
 #zieditor-preview h3 {
-  font-size: 16px;
+  font-size: 1.3em;
 }
 
 #zieditor-preview h4 {
-  font-size: 14px;
+  font-size: 1.2em;
 }
 
 #zieditor-preview h5 {
-  font-size: 12px;
+  font-size: 1.0em;
 }
 
 #zieditor-preview h6 {
-  font-size: 11px;
+  font-size: 0.9em;
 }
 
 #zieditor-preview p {
@@ -267,18 +263,6 @@
   outline: none;
 }
 
-#zieditor-preview h1,
-#zieditor-preview h2,
-#zieditor-preview h3,
-#zieditor-preview h4,
-#zieditor-preview h5,
-#zieditor-preview h6 {
-  margin-top: 1em;
-  margin-bottom: 16px;
-  font-weight: bold;
-  line-height: 1.4;
-}
-
 #zieditor-preview h1 .octicon-link,
 #zieditor-preview h2 .octicon-link,
 #zieditor-preview h3 .octicon-link,
@@ -308,56 +292,24 @@
   visibility: visible;
 }
 
-#zieditor-preview h1 {
-  padding-bottom: 0.3em;
-  font-size: 2.25em;
-  line-height: 1.2;
-  border-bottom: 1px solid #eee;
-}
-
 #zieditor-preview h1 .anchor {
   line-height: 1;
-}
-
-#zieditor-preview h2 {
-  padding-bottom: 0.3em;
-  font-size: 1.75em;
-  line-height: 1.225;
-  border-bottom: 1px solid #eee;
 }
 
 #zieditor-preview h2 .anchor {
   line-height: 1;
 }
 
-#zieditor-preview h3 {
-  font-size: 1.5em;
-  line-height: 1.43;
-}
-
 #zieditor-preview h3 .anchor {
   line-height: 1.2;
-}
-
-#zieditor-preview h4 {
-  font-size: 1.25em;
 }
 
 #zieditor-preview h4 .anchor {
   line-height: 1.2;
 }
 
-#zieditor-preview h5 {
-  font-size: 1em;
-}
-
 #zieditor-preview h5 .anchor {
   line-height: 1.1;
-}
-
-#zieditor-preview h6 {
-  font-size: 1em;
-  color: #777;
 }
 
 #zieditor-preview h6 .anchor {
@@ -470,7 +422,7 @@
   padding-bottom: 0.2em;
   margin: 0;
   font-size: 85%;
-  background-color: rgba(0,0,0,0.04);
+  background-color: rgba(0, 0, 0, 0.04);
   border-radius: 3px;
 }
 
