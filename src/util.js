@@ -128,7 +128,6 @@ const util = {
         if (scrollCount >= Math.PI) {
           dom.scrollTop = top
         }
-        console.log(dom.scrollTop, top)
         if (dom.scrollTop >= top) return
         dom.scrollTop = Math.round(cosParameter + cosParameter * Math.cos(scrollCount))
         oldTimestamp = newTimestamp

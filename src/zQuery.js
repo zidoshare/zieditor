@@ -12,15 +12,15 @@ function ZDom(dom) {
 
 ZDom.prototype.appendClass = function () {
   var className = this.node.className || ''
-  console.log(arguments)
   for (var i = 0; i < arguments.length; i++) {
+    var newClassArr = []
     var classes = className.split(' ')
     for (var j = 0; j < classes.length; j++) {
-      if (classes[j] == arguments[i]) {
-        classes = classes.splice(j, 1)
+      if (classes[j].replace(/ /g,'') != arguments[i].replace(/ /g,'')) {
+        newClassArr.push(classes[j].replace(/ /g,''))
       }
     }
-    className = classes.join(' ') + ' ' + arguments[i]
+    className = newClassArr.join(' ') + ' ' + arguments[i]
   }
   this.node.className = className
   return this
