@@ -8,7 +8,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = merge(common,{
   entry:[
-    path.resolve(__dirname,'test','index.js')
+    path.resolve(__dirname,'server','index.js')
   ],
   devtool:'inline-source-map',
   devServer:{

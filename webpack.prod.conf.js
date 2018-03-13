@@ -7,12 +7,15 @@ var path = require('path')
 var CleanWebpackPlugin = require('clean-webpack-plugin')
 var UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 
-module.exports = merge(common,{
-  entry:[
-    path.resolve(__dirname,'src','index.js')
+module.exports = merge(common, {
+  entry: [
+    path.resolve(__dirname, 'src', 'index.js')
   ],
-  devtool:'source-map',
-  plugins:[
+  output: {
+    libraryTarget: 'umd',
+  },
+  devtool: 'source-map',
+  plugins: [
     new CleanWebpackPlugin(['dist']),
     new UglifyJSPlugin(),
   ]
