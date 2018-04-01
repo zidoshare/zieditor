@@ -13,6 +13,7 @@ module.exports = merge(common, {
   ],
   output: {
     libraryTarget: 'umd',
+    library: 'zimarked',
   },
   devtool: 'source-map',
   plugins: [
