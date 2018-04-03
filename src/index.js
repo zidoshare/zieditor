@@ -1,11 +1,13 @@
 import merge from './helpers/merge'
 var Remarkable = require('remarkable')
 var CodeMirror = require('codemirror')
+import editor from './editor'
 require('codemirror/addon/mode/overlay.js')
 require('codemirror/addon/edit/continuelist.js')
 require('codemirror/mode/markdown/markdown.js')
 require('codemirror/mode/gfm/gfm.js')
 import 'codemirror/lib/codemirror.css'
+import './index.css'
 
 var _defaults = {
   commonmark: false,
@@ -24,7 +26,7 @@ var _defaults = {
 
 //加载highlight.js
 _defaults.highlight = function (str, lang) {
-  if (!defaults._highlight || !window.hljs) {
+  if (!_defaults._highlight || !window.hljs) {
     return ''
   }
   var hljs = window.hljs
@@ -57,7 +59,7 @@ function zieditor(opt) {
   mdHtml.renderer.rules.paragraph_open = function (tokens, idx) {
     var line
     if (tokens[idx].lines && tokens[idx].level === 0) {
-      line = tokens[idx].line[0]
+      line = tokens[idx].lines[0]
       return '<p class="line" data-line="' + line + '">'
     }
     return '<p>'
@@ -66,11 +68,14 @@ function zieditor(opt) {
   mdHtml.renderer.rules.heading_open = function (tokens, idx) {
     var line
     if (tokens[idx].lines && tokens[idx].level === 0) {
-      line = tokens[idx].line[0]
+      line = tokens[idx].lines[0]
       return '<h' + tokens[idx].hLevel + ' class="line" data-line="' + line + '">'
     }
     return '<h' + tokens[idx].hLevel + '>'
   }
+
+  this.mdHtml = mdHtml
+  this.mdSrc = mdSrc
   this.cm = null
 }
 /**
@@ -78,16 +83,27 @@ function zieditor(opt) {
  * @param {HTMLElement} el the all container
  */
 zieditor.prototype.from = function (el) {
+  el.className = 'zieditor-container'
   var textarea = document.createElement('textarea')
   this.textarea = textarea
 
   el.innerHTML = ''
   el.appendChild(textarea)
-  this.cm = CodeMirror.fromTextArea(textarea)
+  this.cm = CodeMirror.fromTextArea(textarea,{
+    lineWrapping:true,
+    mode: 'gfm',
+    extraKeys: {"Enter": "newlineAndIndentContinueMarkdownList"},
+    autofocus: true,
+    foldGutter: true,
+    styleActiveLine: true,
+  })
 
   var previewNode = document.createElement('div')
+  previewNode.className = 'zieditor-preview'
   el.appendChild(previewNode)
   this.previewNode = previewNode
+
+  editor(this.mdHtml,this.mdSrc,this.cm,this.previewNode)
 }
 
 zieditor.prototype.destroyed = function (el) {
