@@ -3,7 +3,7 @@ module.exports = {
   entry: "./src/index.ts",
   output: {
     path: path.resolve(__dirname, '..', 'dist'),
-    filename: 'zieditor.min.js',
+    filename: 'zimarked.min.js',
   },
   module: {
     rules: [{

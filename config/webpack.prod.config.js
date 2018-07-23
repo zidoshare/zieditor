@@ -16,7 +16,7 @@ module.exports = merge(base, {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'zieditor.min.css',
+      filename: 'zimarked.min.css',
     }),
   ]
 })
