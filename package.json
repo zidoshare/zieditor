@@ -14,6 +14,7 @@
     "@types/highlight.js": "^9.12.3",
     "@types/mocha": "^5.2.5",
     "@types/node": "^10.5.2",
+    "@types/remarkable": "^1.7.0",
     "@types/webpack-env": "^1.13.6",
     "autoprefixer": "^9.0.0",
     "babel-cli": "^6.26.0",

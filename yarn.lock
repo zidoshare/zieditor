@@ -18,6 +18,10 @@
   version "10.5.2"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.5.2.tgz#f19f05314d5421fe37e74153254201a7bf00a707"
 
+"@types/remarkable@^1.7.0":
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/@types/remarkable/-/remarkable-1.7.0.tgz#a8ad2beb31f7ff784747fc2e6d98b23a1684072c"
+
 "@types/webpack-env@^1.13.6":
   version "1.13.6"
   resolved "https://registry.yarnpkg.com/@types/webpack-env/-/webpack-env-1.13.6.tgz#128d1685a7c34d31ed17010fc87d6a12c1de6976"

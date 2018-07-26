@@ -2,14 +2,10 @@
   "compilerOptions": {
     "strictNullChecks": true,
     "target": "es6",
+    "moduleResolution": "node",
     "lib": [
       "dom",
       "es7"
     ]
-  },
-  "exclude": [
-    "node_modules",
-    "lib",
-    "es",
-  ]
+  }
 }
