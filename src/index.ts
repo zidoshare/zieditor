@@ -75,7 +75,7 @@ function mdInit() {
 }
 
 function setHighlightedContent(selector,content,lang){
-  
+   
 }
 if (module.hot) {
   module.hot.accept()
