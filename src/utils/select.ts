@@ -1,5 +1,5 @@
 
-class SDom {
+export class SDom {
   doms: Element[];
   constructor(str: string) {
     if (!str) {
@@ -46,6 +46,6 @@ class SDom {
   }
 }
 
-function select(str: string) {
+export default function select(str: string) {
   return new SDom(str);
 }

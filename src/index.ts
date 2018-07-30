@@ -1,6 +1,6 @@
-import * as hljs from 'highlight.js';
 import * as Remarkable from 'remarkable';
 import { addClass, hasClass, removeClass } from './utils/className';
+import select from './utils/select';
 let mdHtml: Remarkable, mdSrc: Remarkable, permallink, scrollMap;
 let defaults = {
   html: false,
@@ -15,6 +15,9 @@ let defaults = {
   _strict: false,
   _view: 'html',
   hightlight: function (str: string, lang: string) {
+    if (!defaults._highlight || !window.hljs) {
+      return '';
+    }
     if (lang && hljs.getLanguage(lang)) {
       try {
         return hljs.highlight(lang, str).value
@@ -63,10 +66,10 @@ function mdInit() {
     return '<p>';
   };
 
-  mdHtml.renderer.rules.heading_open=function(tokens:Remarkable.Token[],idx:number):string{
+  mdHtml.renderer.rules.heading_open = function (tokens: Remarkable.Token[], idx: number): string {
     let line;
     const lines = tokens[idx].lines;
-    if( lines && tokens[idx].level === 0){
+    if (lines && tokens[idx].level === 0) {
       line = lines[0]
       return `<h${tokens[idx].hLevel} class="line" data-line="${line}"`;
     }
@@ -74,8 +77,8 @@ function mdInit() {
   };
 }
 
-function setHighlightedContent(selector,content,lang){
-   
+function setHighlightedContent(selector: string, content: string, lang: string) {
+  select(selector).html(hljs.highlight(lang, content).value);
 }
 if (module.hot) {
   module.hot.accept()
