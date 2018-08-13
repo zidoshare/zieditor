@@ -1,4 +1,8 @@
 
+interface Valable {
+  value: string
+}
+
 export class SDom {
   doms: Element[];
   constructor(str: string) {
@@ -43,6 +47,17 @@ export class SDom {
       }
     })
     return this;
+  }
+  val(): string {
+    if (this.doms.length == 0) {
+      return '';
+    }
+    return this.doms.map(dom => {
+      if(dom instanceof HTMLInputElement){
+        return dom.value;
+      }
+      return '';
+    }).join();
   }
 }
 

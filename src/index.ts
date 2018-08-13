@@ -1,6 +1,7 @@
 import * as Remarkable from 'remarkable';
 import { addClass, hasClass, removeClass } from './utils/className';
 import select from './utils/select';
+declare var window: Window & { hljs: any }
 let mdHtml: Remarkable, mdSrc: Remarkable, permallink, scrollMap;
 let defaults = {
   html: false,
@@ -18,13 +19,13 @@ let defaults = {
     if (!defaults._highlight || !window.hljs) {
       return '';
     }
-    if (lang && hljs.getLanguage(lang)) {
+    if (lang && window.hljs.getLanguage(lang)) {
       try {
-        return hljs.highlight(lang, str).value
+        return window.hljs.highlight(lang, str).value
       } catch (__) { }
     }
     try {
-      return hljs.highlightAuto(str).value
+      return window.hljs.highlightAuto(str).value
     } catch (__) { }
     return ''
   }
@@ -78,7 +79,49 @@ function mdInit() {
 }
 
 function setHighlightedContent(selector: string, content: string, lang: string) {
-  select(selector).html(hljs.highlight(lang, content).value);
+  if (window.hljs) {
+    select(selector).html(window.hljs.highlight(lang, content).value);
+  } else {
+    select(selector).text(content);
+  }
+}
+
+function updateResult() {
+  let source = select('.source').val();
+  if (defaults._view === 'src') {
+    setHighlightedContent('.result-src-content', mdSrc.render(source), 'html');
+  } else if (defaults._view === 'debug') {
+    setHighlightedContent('.result-debug-content',
+      JSON.stringify(mdSrc.parse(source, { references: {} }), null, 2),
+      'json'
+    );
+  } else {
+    select('.result-html').html(mdHtml.render(source));
+  }
+  scrollMap == null;
+  try {
+    if (source) {
+      permallink.href = '#md64=' + window.btoa(encodeURI(JSON.stringify({
+        source,
+        defaults: {
+          ...defaults,
+          highlight: null,
+        }
+      })))
+    } else {
+      permallink.href = '';
+    }
+  } catch (__) {
+    permallink.href = '';
+  }
+}
+
+function buildScrollMap() {
+  let i, offset, nonEmptyList, pos, a, b, lineHeightMap, linesCount,
+    acc, textarea = select('.source'),
+    _scrollMap;
+  let sourceLikeDiv = document.createElement('div');
+  
 }
 if (module.hot) {
   module.hot.accept()
