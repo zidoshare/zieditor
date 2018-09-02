@@ -121,7 +121,43 @@ function buildScrollMap() {
     acc, textarea = select('.source'),
     _scrollMap;
   let sourceLikeDiv = document.createElement('div');
-  
+  sourceLikeDiv.style.position = 'absolute';
+  sourceLikeDiv.style.visibility = 'hidden';
+  sourceLikeDiv.style.height = 'auto';
+  sourceLikeDiv.style.width = textarea.doms[0].clientWidth + 'px';
+  sourceLikeDiv.style.fontSize = textarea.css('fontSize');
+  sourceLikeDiv.style.fontFamily=textarea.css('fontFamily');
+  sourceLikeDiv.style.lineHeight = textarea.css('lineHeight');
+  sourceLikeDiv.style.whiteSpace = textarea.css('whiteSpace');
+  document.body.appendChild(sourceLikeDiv);
+  offset = select('.result-html').dom().scrollTop - select('.result-html').dom().offsetTop;
+  _scrollMap = [];
+  nonEmptyList = [];
+  lineHeightMap = [];
+  acc = 0;
+  textarea.val().split('\n').forEach(function(str) {
+    var h,lh;
+    lineHeightMap.push(acc);
+    if(str.length === 0){
+      acc++;
+      return;
+    }
+    sourceLikeDiv.innerText = str;
+    h = sourceLikeDiv.style.height;
+    lh = sourceLikeDiv.style.lineHeight;
+    acc += Math.round(h / lh);
+  });
+  sourceLikeDiv.remove();
+  lineHeightMap.push(acc);
+  linesCount = acc;
+  for(i = 0; i < linesCount; i++){
+    _scrollMap.push(-1);
+  }
+  nonEmptyList.push(0);
+  _scrollMap[0] = 0;
+  select('.line').doms.forEach(function(el,n) {
+    // let $el = el,t=el.get
+  })
 }
 if (module.hot) {
   module.hot.accept()

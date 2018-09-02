@@ -59,6 +59,19 @@ export class SDom {
       return '';
     }).join();
   }
+  css(prop:string):string{
+    if(this.doms.length == 0){
+      return '';
+    }
+    let dom = this.doms[0]
+    if(dom instanceof HTMLElement){
+      return dom.style[prop] + 'px';
+    }
+    return '';
+  }
+  dom():HTMLElement{
+    return <HTMLElement>this.doms[0]
+  }
 }
 
 export default function select(str: string) {
